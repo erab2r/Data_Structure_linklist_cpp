@@ -15,10 +15,10 @@ void solve() {
     long long deletions = 0;
 
     for (int mex = 0; mex <= n; ++mex) {
-        // If we can't form MEX = mex because some number < mex is missing
+
         if ((mex > 0 && freq[mex - 1] == 0)) break;
 
-        // Add extra occurrences of this number to deletions
+      
         if (freq[mex] > 0) {
             for (int i = 1; i < freq[mex]; ++i) {
                 extras.insert(mex);
