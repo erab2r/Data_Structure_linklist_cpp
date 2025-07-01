@@ -10,9 +10,6 @@ void solve() {
         if (a[i] <= n)
             freq[a[i]]++;
     }
-
-    // We will calculate, for each possible MEX x (0 to n),
-    // the minimum number of deletions needed to make x the MEX
     multiset<int> extras;
     vector<int> answer(n + 1, 0);
     long long deletions = 0;
@@ -27,17 +24,13 @@ void solve() {
                 extras.insert(mex);
             }
         }
-
-        // All other values > mex can be removed
         int max_k = deletions + (int)extras.size();
 
-        // We can achieve MEX = mex by removing from deletions to n elements
         for (int k = deletions; k <= n; ++k) {
             answer[k]++;
         }
 
-        deletions += freq[mex] - 1; // we keep 1 of mex (if exists), others count as removable
-    }
+        deletions += freq[mex] - 1; 
 
     for (int k = 0; k <= n; ++k) {
         cout << answer[k] << " ";
