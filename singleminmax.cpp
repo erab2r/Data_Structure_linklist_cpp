@@ -39,7 +39,6 @@ int find_max_min(Node* head) {
 
     return mx - mn;
 }
-
 int main() {
     Node* head = NULL;
     Node* tail = NULL;
