@@ -22,36 +22,35 @@ void insert_at_tail(Node* &head, Node* &tail, int val) {
     }
 }
 
-void print_link_list(Node* head) {
+int find_max_min(Node* head) {
+    if (head == NULL) {
+        return 0;
+    } 
+
+    int mx = head->val;
+    int mn = head->val;
+
     Node* temp = head;
     while (temp != NULL) {
-        cout << temp->val << endl;
+        if (temp->val > mx) mx = temp->val;
+        if (temp->val < mn) mn = temp->val;
         temp = temp->next;
     }
-}
-void  print_reverse(Node* temp){
-    if(temp ==NULL){
-        return;
-    }
-    print_reverse(temp->next);
-    cout << temp->val <<endl;
+
+    return mx - mn;
 }
 
 int main() {
     Node* head = NULL;
     Node* tail = NULL;
-    int val;                    
-
+    int val;
     while (true) {
         cin >> val;
-        if (val == -1) {
-            break;
-        }
+        if (val == -1) break;
         insert_at_tail(head, tail, val);
     }
-
-    print_reverse(head);
+    int different = find_max_min(head);
+    cout << different << endl;
 
     return 0;
 }
-//0(n)
