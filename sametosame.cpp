@@ -39,7 +39,6 @@ int same_to_same(Node* head1, Node* head2) {
 
     return 1;
 }
-
 int main() {
     Node* head1 = NULL;
     Node* tail1 = NULL;
