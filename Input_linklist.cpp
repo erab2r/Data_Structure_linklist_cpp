@@ -1,31 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-class Node {
-public:
+class Node{
+    public:
     int val;
-    Node* next;
-    Node(int val) {
+    Node*next;
+    Node(int val){
         this->val = val;
         this->next = NULL;
     }
 };
-
-void insert_at_tail(Node* &head, Node* &tail, int val) {
-    Node* newnode = new Node(val);
-    if (head == NULL) {
-        head = newnode;
-        tail = newnode;
-    } else {
-        tail->next = newnode;
-        tail = newnode;
+void insert_at_tail(Node* &head,Node* &tail,int val){
+    Node* newNode = new Node(val);
+    if(head == NULL){
+        head = newNode;
+        tail = newNode;
+        return;
     }
+    tail->next = newNode;
+    tail = newNode;
 }
-
-void print_link_list(Node* head) {
-    Node* temp = head;
-    while (temp != NULL) {
-        cout << temp->val << endl;
+void print_link_list(Node* head){
+    Node*temp = head;
+       while (temp != NULL)
+    {
+        cout << temp->val <<endl;
         temp = temp->next;
     }
 }
