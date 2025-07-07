@@ -18,11 +18,12 @@ void insert_at_head(Node* &head,int val){
 }
 void print_link_list(Node* head){
     Node*temp = head;
-       while (temp != NULL)
-    {
-        cout << temp->val <<endl;
+    while (temp != NULL)
+    {   
+         cout << temp->val << endl;
         temp = temp->next;
     }
+   
 }
 int main(){
     Node* head = new Node(20);

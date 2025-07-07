@@ -20,16 +20,14 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     tail->next = newNode;
     tail = newNode;
 }
-void print_max_value(Node* head) {
-    int max_val = INT_MIN;
+int get_linklist_size(Node* head) {
+    int count = 0;
     Node* temp = head;
     while (temp != NULL) {
-        if (temp->val > max_val) {
-            max_val = temp->val;
-        }
+        count++;
         temp = temp->next;
     }
-    cout << max_val << endl;
+    return count;
 }
 
 int main() {
@@ -54,7 +52,12 @@ int main() {
         insert_at_tail(head2, tail2, val);
     }
 
-      print_max_value(head);
-
+    int size1 = get_linklist_size(head1);
+    int size2 = get_linklist_size(head2);
+    if (size1 == size2) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
     return 0;
 }
