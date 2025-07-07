@@ -16,7 +16,6 @@ void insert_at_head(Node* &head,int val){
     head = newnode;
 
 }
-
 void print_link_list(Node* head){
     Node*temp = head;
        while (temp != NULL)
